@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-indigo-500 text-white pt-12 pb-6 px-4 tracking-wide absolute bottom-0 w-full">
+  <footer class="bg-indigo-500 text-white pt-12 pb-6 px-4 tracking-wide  bottom-0 w-full">
       <div class="text-center">
         <ul class="flex gap-x-8 gap-y-3 justify-center flex-wrap">
           <li><a href="javascript:void(0)" class="text-[15px] text-slate-300 hover:text-white">Terms of Service</a></li>

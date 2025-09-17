@@ -41,6 +41,12 @@ const router = createRouter({
       component: () => import('@/components/DetailContact.vue') ,
 
     },
+    {
+      path: '/mycontact',
+      name: 'mycontact',
+      component: () => import('@/components/MyContact.vue') ,
+
+    },
   ],
 })
 

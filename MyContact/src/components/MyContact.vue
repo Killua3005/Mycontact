@@ -1,41 +1,41 @@
 <template>
   <HeaderPage />
-  <!-- <SiderBar /> -->
-  <div class="overflow-x-auto">
+
+    <div class="overflow-x-auto">
       <table class="min-w-full bg-white">
         <thead class="bg-gray-100 whitespace-nowrap">
           <tr>
             <th class="p-4 text-left text-[13px] font-semibold text-slate-900">
-              Firstname
-            </th>
-            <th class="p-4 text-left text-[13px] font-semibold text-slate-900">
-              Lastname
+              Name
             </th>
             <th class="p-4 text-left text-[13px] font-semibold text-slate-900">
               Email
             </th>
             <th class="p-4 text-left text-[13px] font-semibold text-slate-900">
-              Phone
+              Role
             </th>
             <th class="p-4 text-left text-[13px] font-semibold text-slate-900">
-
+              Joined At
+            </th>
+            <th class="p-4 text-left text-[13px] font-semibold text-slate-900">
+              Actions
             </th>
           </tr>
         </thead>
 
         <tbody class="whitespace-nowrap">
-          <tr class="hover:bg-gray-50" v-for="cont in users" :key="cont.id">
+          <tr class="hover:bg-gray-50">
             <td class="p-4 text-[15px] text-slate-900 font-medium">
-              {{ cont.firstname }}
+              John Doe
             </td>
             <td class="p-4 text-[15px] text-slate-600 font-medium">
-              {{ cont.lastname }}
+              john@example.com
             </td>
             <td class="p-4 text-[15px] text-slate-600 font-medium">
-              {{ cont.email }}
+              Admin
             </td>
             <td class="p-4 text-[15px] text-slate-600 font-medium">
-              {{ cont.phone }}
+              2022-05-15
             </td>
             <td class="p-4">
               <div class="flex items-center">
@@ -50,11 +50,20 @@
                       data-original="#000000" />
                   </svg>
                 </button>
+                <button title="Delete" class="cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-red-500 hover:fill-red-700" viewBox="0 0 24 24">
+                    <path
+                      d="M19 7a1 1 0 0 0-1 1v11.191A1.92 1.92 0 0 1 15.99 21H8.01A1.92 1.92 0 0 1 6 19.191V8a1 1 0 0 0-2 0v11.191A3.918 3.918 0 0 0 8.01 23h7.98A3.918 3.918 0 0 0 20 19.191V8a1 1 0 0 0-1-1Zm1-3h-4V2a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v2H4a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2ZM10 4V3h4v1Z"
+                      data-original="#000000" />
+                    <path d="M11 17v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Zm4 0v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Z"
+                      data-original="#000000" />
+                  </svg>
+                </button>
               </div>
             </td>
           </tr>
 
-          <!-- <tr class="hover:bg-gray-50">
+          <tr class="hover:bg-gray-50">
             <td class="p-4 text-[15px] text-slate-900 font-medium">
               Jane Smith
             </td>
@@ -208,32 +217,22 @@
                 </button>
               </div>
             </td>
-          </tr> -->
+          </tr>
         </tbody>
       </table>
     </div>
-    <FooterPage />
-    <!-- <SiderBar /> -->
+
+  <FooterPage />
 
 </template>
+
+<script setup>
+import FooterPage from './FooterPage.vue';
+import HeaderPage from './HeaderPage.vue';
+
+
+</script>
 
 <style>
 
 </style>
-
-<script setup>
-import HeaderPage from '@/components/HeaderPage.vue';
-// import SiderBar from './SiderBar.vue';
-import FooterPage from './FooterPage.vue';
-import { useUser } from '@/stores/user';
-import { storeToRefs } from 'pinia';
-import { onMounted } from 'vue';
-const donnee = useUser();
-const {GetContact} = donnee;
-const {users} = storeToRefs(donnee);
-const {token} = storeToRefs(donnee)
-const {user} = storeToRefs(donnee)
-onMounted(()=>{
-  GetContact()
-})
-</script>
